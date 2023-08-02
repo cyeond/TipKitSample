@@ -9,12 +9,23 @@ import SwiftUI
 import TipKit
 
 struct ContentView: View {
+    private let myTip: MyTip
+    
+    init() {
+        self.myTip = MyTip()
+        
+        Task {
+            try? await Tips.configure()
+        }
+    }
+    
     var body: some View {
         VStack(spacing: 0) {
             Text("TipKit Sample")
+                .popoverTip(myTip)
             Spacer()
             Button {
-                
+                MyTip.myDonationEvent.donate()
             } label: {
                 Text("Donate Event")
             }
