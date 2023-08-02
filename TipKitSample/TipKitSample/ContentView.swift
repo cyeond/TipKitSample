@@ -6,14 +6,19 @@
 //
 
 import SwiftUI
+import TipKit
 
 struct ContentView: View {
     var body: some View {
-        VStack {
-            Image(systemName: "globe")
-                .imageScale(.large)
-                .foregroundStyle(.tint)
-            Text("Hello, world!")
+        VStack(spacing: 0) {
+            Text("TipKit Sample")
+            Spacer()
+            Button {
+                
+            } label: {
+                Text("Donate Event")
+            }
+            .padding(.bottom, 200.0)
         }
         .padding()
     }
